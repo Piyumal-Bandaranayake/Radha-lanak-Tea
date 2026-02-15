@@ -16,10 +16,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Product", href: "#product" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Products", href: "/products" },
+    { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
   ];
+
 
   return (
     <nav
