@@ -59,7 +59,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="font-script text-5xl md:text-8xl text-white mb-6 md:mb-8 leading-tight"
+              className="text-5xl md:text-8xl text-white mb-6 md:mb-8 leading-tight font-secondary"
               dangerouslySetInnerHTML={{ __html: heroSlides[current].title }}
             />
 

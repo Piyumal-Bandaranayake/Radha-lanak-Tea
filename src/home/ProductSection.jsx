@@ -54,9 +54,9 @@ const ProductSection = () => {
               <p className="text-primary/60 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0">
                 Experience the pure essence of nature with our hand-picked, organic collections.
               </p>
-              <button className="px-8 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-accent transition-all">
+              <Link href="/products" className="px-8 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-accent transition-all inline-block">
                 View Collections
-              </button>
+              </Link>
             </motion.div>
  
             {/* Center Product with Floating Tags */}
