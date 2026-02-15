@@ -10,21 +10,14 @@ import { products } from "@/data/products";
 import { useState } from "react";
 
 export default function ProductsPage() {
-  const [filter, setFilter] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState(null);
-  
-  const categories = ["All", ...new Set(products.map(p => p.category))];
-  
-  const filteredProducts = filter === "All" 
-    ? products 
-    : products.filter(p => p.category === filter);
 
   return (
     <main className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       
       {/* Header Section */}
-      <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
+      <section className="bg-primary pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-[100px]"></div>
         </div>
@@ -34,46 +27,24 @@ export default function ProductsPage() {
           transition={{ duration: 0.8 }}
           className="container mx-auto px-6 relative z-10 text-center"
         >
-          <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Our Collections</h1>
-          <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg italic">
+          <h1 className="text-white text-4xl md:text-6xl font-bold mb-4 md:mb-6">Our Collections</h1>
+          <div className="w-20 h-1 bg-accent mx-auto mb-6 md:mb-8"></div>
+          <p className="text-white/60 max-w-2xl mx-auto text-base md:text-lg italic px-4 md:px-0">
             "Explore our full range of organic, hand-picked teas from the finest estates in Sri Lanka."
           </p>
         </motion.div>
       </section>
 
-      {/* Filter & Grid Section */}
+      {/* Product Grid Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          {/* Category Filters */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
-          >
-            {categories.map((cat, idx) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-8 py-2 rounded-full border transition-all duration-300 uppercase tracking-widest text-xs font-bold ${
-                  filter === cat 
-                  ? "bg-accent border-accent text-primary shadow-lg" 
-                  : "border-primary/10 text-primary/60 hover:border-accent hover:text-accent"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </motion.div>
-
           {/* Product Grid */}
           <motion.div 
             layout
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
           >
             <AnimatePresence mode="popLayout">
-              {filteredProducts.map((product, idx) => (
+              {products.map((product, idx) => (
                 <motion.div 
                   layout
                   key={product.id} 
@@ -130,16 +101,6 @@ export default function ProductsPage() {
               ))}
             </AnimatePresence>
           </motion.div>
-          
-          {filteredProducts.length === 0 && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
-              <p className="text-primary/40 italic">No products found in this category.</p>
-            </motion.div>
-          )}
         </div>
       </section>
 
@@ -157,4 +118,3 @@ export default function ProductsPage() {
     </main>
   );
 }
-

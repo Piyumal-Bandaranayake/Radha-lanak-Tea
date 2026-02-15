@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { heroSlides } from "@/data/heroSlides";
 
@@ -11,7 +12,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -44,12 +45,12 @@ const Hero = () => {
           </motion.div>
 
           {/* Left Content */}
-          <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
+          <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start pt-20 md:pt-0">
             <motion.h3 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-accent text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-4"
+              className="text-accent text-xs md:text-base font-medium tracking-[0.3em] uppercase mb-4"
             >
               {heroSlides[current].subtitle}
             </motion.h3>
@@ -58,7 +59,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="font-script text-6xl md:text-8xl text-white mb-8 leading-tight"
+              className="font-script text-5xl md:text-8xl text-white mb-6 md:mb-8 leading-tight"
               dangerouslySetInnerHTML={{ __html: heroSlides[current].title }}
             />
 
@@ -66,7 +67,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-text-light/70 max-w-lg mb-10 text-lg font-light leading-relaxed"
+              className="text-text-light/70 max-w-lg mb-8 md:mb-10 text-base md:text-lg font-light leading-relaxed px-4 md:px-0"
             >
               {heroSlides[current].description}
             </motion.p>
@@ -75,20 +76,21 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="flex flex-wrap justify-center md:justify-start gap-4"
+              className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 w-full sm:w-auto px-6 md:px-0"
             >
-              <button className="px-10 py-4 bg-accent text-primary font-bold uppercase tracking-widest text-sm rounded hover:bg-white transition-all duration-300 shadow-lg shadow-accent/20">
+              <Link href="/products" className="px-10 py-4 bg-accent text-primary font-bold uppercase tracking-widest text-xs md:text-sm rounded hover:bg-white transition-all duration-300 shadow-lg shadow-accent/20 text-center">
                 Shop Now
-              </button>
-              <button className="px-10 py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm rounded hover:bg-white/10 transition-all duration-300">
+              </Link>
+              <Link href="/about" className="px-10 py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-xs md:text-sm rounded hover:bg-white/10 transition-all duration-300 text-center">
                 Explore Our Story
-              </button>
+              </Link>
+
             </motion.div>
           </div>
 
           {/* Right side: Image Element */}
-          <div className="flex-1 relative mt-16 md:mt-0 flex justify-center items-center">
-              <div className="relative w-80 h-80 md:w-[550px] md:h-[550px]">
+          <div className="flex-1 relative mt-12 md:mt-0 flex justify-center items-center scale-90 md:scale-100">
+              <div className="relative w-72 h-72 md:w-[550px] md:h-[550px]">
                   {/* Decorative Rings */}
                   <motion.div 
                     animate={{ rotate: 360 }}
@@ -106,7 +108,7 @@ const Hero = () => {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 1 }}
-                    className="absolute inset-16 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50 group"
+                    className="absolute inset-12 md:inset-16 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50 group"
                   >
                       <Image 
                         src={heroSlides[current].image} 
@@ -121,7 +123,7 @@ const Hero = () => {
                   <motion.div 
                     animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-10 right-10 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-3 shadow-xl border border-white/20"
+                    className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-2 md:p-3 shadow-xl border border-white/20"
                   >
                        <Image 
                           src="https://v5.airtableusercontent.com/v3/u/34/34/1739815200000/bKxMofv7iYv6w99O6PjSww/w80rVp9O8C0_34c56y5x_o_4H_X_w_w/34" 
@@ -135,7 +137,7 @@ const Hero = () => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 1, type: "spring" }}
-                    className="absolute bottom-20 -left-10 w-24 h-24 bg-accent/20 backdrop-blur-sm rounded-full flex flex-col items-center justify-center text-accent font-bold text-[10px] text-center leading-tight border border-accent/20"
+                    className="absolute bottom-16 -left-6 md:bottom-20 md:-left-10 w-20 h-20 md:w-24 md:h-24 bg-accent/20 backdrop-blur-sm rounded-full flex flex-col items-center justify-center text-accent font-bold text-[8px] md:text-[10px] text-center leading-tight border border-accent/20"
                   >
                       {heroSlides[current].feature.split(' ').map((word, i) => (
                         <span key={i}>{word}<br/></span>
@@ -144,17 +146,18 @@ const Hero = () => {
 
               </div>
           </div>
+
         </motion.div>
       </AnimatePresence>
 
       {/* Social Links */}
       <div className="absolute left-6 bottom-12 hidden lg:flex flex-col gap-8 text-white/50 text-xs">
-        <a href="#" className="hover:text-accent [writing-mode:vertical-lr] uppercase tracking-[0.3em] transition-colors">Instagram</a>
-        <a href="#" className="hover:text-accent [writing-mode:vertical-lr] uppercase tracking-[0.3em] transition-colors">Facebook</a>
+  
+        <a href="https://www.facebook.com/share/1DT4K9jPiU/" className="hover:text-accent [writing-mode:vertical-lr] uppercase tracking-[0.3em] transition-colors">Facebook</a>
       </div>
 
       {/* Pagination dots */}
-      <div className="absolute bottom-12 left-1/2 -track-x-1/2 flex gap-3">
+      <div className="absolute bottom-12 left-1/2 -track-x-1/2 flex gap-3"> 
         {heroSlides.map((_, i) => (
           <button
             key={i}

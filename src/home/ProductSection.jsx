@@ -29,14 +29,15 @@ const ProductSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative mb-32 h-[600px] flex items-center justify-center overflow-hidden rounded-[3rem] bg-linear-to-br from-primary/5 to-accent/5 border border-primary/5"
+          className="relative mb-32 min-h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden rounded-3xl md:rounded-[3rem] bg-linear-to-br from-primary/5 to-accent/5 border border-primary/5 py-12 md:py-0"
         >
           {/* Abstract Background Elements */}
           <div className="absolute inset-0 z-0 text-[#1B4332]/5">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-current rounded-full animate-pulse"></div>
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-accent/10 rounded-full"></div>
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/5 rounded-full blur-3xl"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-current rounded-full animate-pulse"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[450px] md:h-[450px] border border-accent/10 rounded-full"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-accent/5 rounded-full blur-3xl"></div>
           </div>
+
 
           <div className="relative z-10 w-full max-w-5xl flex flex-col md:flex-row items-center justify-between gap-12 px-12">
             {/* Left Content */}
@@ -45,21 +46,21 @@ const ProductSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="flex-1 text-center md:text-left"
+              className="flex-1 text-center md:text-left pt-8 md:pt-0"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+              <h2 className="text-3xl md:text-6xl font-bold text-primary mb-6 leading-tight">
                 Crafting the Soul of <br/> <span className="text-accent italic">Ceylon</span>
               </h2>
-              <p className="text-primary/60 text-lg mb-8 max-w-md">
+              <p className="text-primary/60 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0">
                 Experience the pure essence of nature with our hand-picked, organic collections.
               </p>
               <button className="px-8 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-accent transition-all">
                 View Collections
               </button>
             </motion.div>
-
+ 
             {/* Center Product with Floating Tags */}
-            <div className="flex-1 relative flex justify-center py-20">
+            <div className="flex-1 relative flex justify-center py-12 md:py-20 scale-75 md:scale-100">
                {/* Podium */}
                <div className="absolute bottom-10 w-64 h-20 bg-white shadow-2xl rounded-[50%] skew-x-[-10deg] blur-sm opacity-50"></div>
                <div className="absolute bottom-14 w-56 h-4 bg-primary/10 rounded-full blur-xl"></div>
@@ -70,7 +71,7 @@ const ProductSection = () => {
                  whileInView={{ opacity: 1, scale: 1 }}
                  viewport={{ once: true }}
                  transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
-                 className="relative w-64 h-96 z-10 animate-float"
+                 className="relative w-48 h-72 md:w-64 md:h-96 z-10 animate-float"
                >
                   <Image 
                     src="/product.png" 
@@ -79,6 +80,7 @@ const ProductSection = () => {
                     className="object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.3)]"
                   />
                </motion.div>
+
 
                {/* Floating Tags */}
                {floatingTags.map((tag, i) => (
