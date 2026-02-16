@@ -17,7 +17,7 @@ const ProductSection = () => {
     { text: "Black Tea", pos: "bottom-20 left-10" },
     { text: "100% Natural Flavory Tea", pos: "top-20 right-0" },
     { text: "Spicy", pos: "bottom-40 -right-10" },
-    { text: "Dehydrated Foods", pos: "bottom-10 right-10" },
+    { text: "Dehydrated Product", pos: "bottom-10 right-10" },
   ];
 
   return (
@@ -54,9 +54,9 @@ const ProductSection = () => {
               <p className="text-primary/60 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0">
                 Experience the pure essence of nature with our hand-picked, organic collections.
               </p>
-              <button className="px-8 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-accent transition-all">
+              <Link href="/products" className="px-8 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-accent transition-all inline-block">
                 View Collections
-              </button>
+              </Link>
             </motion.div>
  
             {/* Center Product with Floating Tags */}
@@ -159,9 +159,11 @@ const ProductSection = () => {
                   {product.name}
                 </h4>
                 <div className="inline-block relative">
-                   <div className="text-primary/40 font-bold tracking-[0.2em] text-sm uppercase">Starts from</div>
+                   <div className="text-primary/40 font-bold tracking-[0.2em] text-sm uppercase">
+                     Starts from / {product.cardPriceLabel || "100g"}
+                   </div>
                    <div className="text-primary font-black text-2xl tracking-tight">
-                     {product.prices["1kg"]}
+                     {product.cardPriceKey ? product.prices[product.cardPriceKey] : product.prices["100g"]}
                    </div>
                    {/* Decorative Line */}
                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full"></div>

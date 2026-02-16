@@ -22,15 +22,7 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1594631252845-29fc4586216c?auto=format&fit=crop&q=80&w=2000"
-            alt="Tea Estate"
-            fill
-            className="object-cover opacity-40 grayscale-[0.2]"
-          />
-          <div className="absolute inset-0 bg-linear-to-b from-primary/60 via-transparent to-primary/80"></div>
-        </div>
+
 
         <div className="relative z-10 text-center px-6">
           <motion.h3 
@@ -38,7 +30,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, tracking: "0.3em" }}
             className="text-accent uppercase font-bold text-sm md:text-base mb-6 tracking-[0.3em]"
           >
-            Since 1974
+            Since 2014
           </motion.h3>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -61,12 +53,34 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
                 Purity in Every <br/> Single Drop
               </h2>
-              <p className="text-primary/70 text-lg leading-relaxed mb-8">
-                Radha Lanka was born in the heart of the misty Sri Lankan highlands, where the unique climate and rich soil create the world's most exquisite teas. For over 50 years, we have maintained a commitment to purity that defines every leaf we harvest.
+              <div className="flex gap-8 mb-8 text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary/40">
+                <div className="flex flex-col gap-1">
+                   <span>Tea Board Reg</span>
+                   <span className="text-accent">HT 0075</span>
+                </div>
+                <div className="flex flex-col gap-1">
+                   <span>Company Reg</span>
+                   <span className="text-accent">PV 00313941</span>
+                </div>
+              </div>
+              <p className="text-primary/70 text-lg leading-relaxed mb-6 font-medium italic">
+                "All these tea products are produced using only the finest, purest and highest quality tea leaves harvested from the tea estates owned by Radha Lanka Teas (PVT) LTD, using our unique techniques."
               </p>
-              <p className="text-primary/70 text-lg leading-relaxed">
-                We believe that tea is more than a beverage; it is a bridge between nature and the soul. Our mission is to preserve the authentic traditions of Ceylon tea while embracing sustainable practices that protect our beautiful island for generations to come.
+              <p className="text-primary/70 text-base leading-relaxed mb-8">
+                Radha Lanka was born in the heart of the misty Sri Lankan highlands. We maintain a commitment to purity that defines every leaf we harvest for over 10 years. We believe that tea is more than a beverage; it is a bridge between nature and the soul.
               </p>
+              
+              <div className="bg-zinc-50 p-6 rounded-2xl border border-primary/5">
+                <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h11M5 12h11M5 16h11M5 4h11" />
+                  </svg>
+                  Island-wide Delivery
+                </h4>
+                <p className="text-primary/60 text-sm">
+                  We provide direct home delivery for all our products across Sri Lanka. Standard courier service charges apply based on your location.
+                </p>
+              </div>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -77,8 +91,8 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1544787210-282aa9dfec5c?auto=format&fit=crop&q=80&w=1000"
-                  alt="Traditional Tea Sourcing"
+                  src="/bteas.jpg"
+                  alt="Radha Lanka Premium Teas"
                   fill
                   className="object-cover"
                 />
