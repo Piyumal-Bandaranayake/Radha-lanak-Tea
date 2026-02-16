@@ -10,17 +10,17 @@ export const heroSlides = [
   {
     id: 2,
     subtitle: "Premium Ceylon Quality",
-    title: "Pure <span class='text-accent'>Artisan</span> Blends",
-    description: "Discover the golden heritage of Ceylon. Every leaf tells a story of tradition, passion, and unparalleled purity from our estates.",
+    title: "Pure <span class='text-accent'>Dehydrated</span> Products",
+    description: "Preserving nature's goodness through our unique dehydration process. Taste the concentrated flavor of sun-ripened fruits and vegetables from Radha Lanka.",
     image: "/d.jpg",
-    feature: "100% ORGANIC"
+    feature: "100% NATURAL"
   },
   {
     id: 3,
     subtitle: "Naturally Sourced",
     title: "Herbal <span class='text-accent'>Wellness</span> Tea",
     description: "Rejuvenate your soul with our therapeutic herbal collections. Sourced from the mist-covered mountains for your ultimate well-being.",
-    image: "/spcy.jpg",
+    image: "/teafactory.jpg",
     feature: "HAND PICKED"
   }
 ];

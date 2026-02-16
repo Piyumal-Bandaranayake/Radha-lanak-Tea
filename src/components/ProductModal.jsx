@@ -48,24 +48,27 @@ const ProductModal = ({ product, isOpen, onClose }) => {
           <div className="space-y-3 mb-8">
             <h4 className="text-primary font-bold uppercase tracking-widest text-[10px] border-b border-primary/5 pb-1">Pricing Details</h4>
             <div className="space-y-2">
-              <div className="flex justify-between items-center bg-zinc-50 px-4 py-2.5 rounded-xl border border-primary/5">
-                 <span className="text-primary/60 text-xs font-medium">1 Kilo Package</span>
-                 <span className="text-primary font-bold text-lg">{product.prices["1kg"]}</span>
-              </div>
-              <div className="flex justify-between items-center bg-zinc-50 px-4 py-2.5 rounded-xl border border-primary/5">
-                 <span className="text-primary/60 text-xs font-medium">500 Grams Package</span>
-                 <span className="text-primary font-bold text-base">{product.prices["500g"]}</span>
-              </div>
-              <div className="flex justify-between items-center bg-zinc-50 px-4 py-2.5 rounded-xl border border-primary/5">
-                 <span className="text-primary/60 text-xs font-medium">100 Grams Sample</span>
-                 <span className="text-primary font-bold text-base">{product.prices["100g"]}</span>
-              </div>
+              {Object.entries(product.prices).map(([key, value]) => {
+                const labels = {
+                  "1kg": "1 Kilo Package",
+                  "500g": "500 Grams Package",
+                  "100g": "100 Grams Sample",
+                  "piece": "1 Piece",
+                  "bowl": "1 Bolw"
+                };
+                return (
+                  <div key={key} className="flex justify-between items-center bg-zinc-50 px-4 py-2.5 rounded-xl border border-primary/5">
+                    <span className="text-primary/60 text-xs font-medium">{labels[key] || key}</span>
+                    <span className="text-primary font-bold text-lg">{value}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div className="flex justify-center">
             <a 
-              href={`https://wa.me/94777123456?text=Hello Radha Lanka! I'm interested in ordering ${product.name}. Could you provide more details?`}
+              href={`https://wa.me/94769070466?text=Hello Radha Lanka! I'm interested in ordering ${product.name}. Could you provide more details?`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-[#25D366] text-white font-bold uppercase tracking-[0.2em] rounded-full shadow-lg hover:bg-[#128C7E] transition-all duration-300 flex items-center justify-center gap-2 transform active:scale-95 text-xs md:text-sm"

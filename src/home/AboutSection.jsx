@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 const AboutSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "https://images.unsplash.com/photo-1544787210-282aa9dfec5c?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1594631252845-29fc4586216c?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1563911191333-dc1c76f63f53?auto=format&fit=crop&q=80&w=1200"
+    "/radhalogo.png",
+    "/tea.jpg",
+    "/dfood.jpg",
+    "/spycebag.png"
   ];
 
   useEffect(() => {
@@ -65,7 +66,7 @@ const AboutSection = () => {
               
               {/* Floating Badge */}
               <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-2xl z-20 hidden md:block border border-accent/10">
-                <div className="text-4xl font-bold text-primary mb-1">50+</div>
+                <div className="text-4xl font-bold text-primary mb-1">10+</div>
                 <div className="text-accent text-xs uppercase tracking-[0.2em] font-bold">Years of Tradition</div>
               </div>
             </div>
@@ -101,9 +102,12 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-            <button className="px-10 py-4 bg-primary text-white font-bold uppercase tracking-widest text-sm rounded shadow-xl hover:bg-accent transition-all duration-300">
+            <Link 
+              href="/about"
+              className="px-10 py-4 bg-primary text-white font-bold uppercase tracking-widest text-sm rounded shadow-xl hover:bg-accent transition-all duration-300 inline-block text-center"
+            >
               Discover Our Story
-            </button>
+            </Link>
           </div>
         </div>
       </div>

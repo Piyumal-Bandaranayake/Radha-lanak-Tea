@@ -49,7 +49,7 @@ const ContactSection = () => {
                    </div>
                 </div>
                 <a 
-                  href="https://wa.me/94777123456" 
+                  href="https://wa.me/94769070466" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-6 group cursor-pointer"
@@ -65,7 +65,7 @@ const ContactSection = () => {
                    </motion.div>
                    <div>
                      <h4 className="font-bold opacity-50 text-[10px] md:text-xs uppercase tracking-widest group-hover:text-[#25D366] transition-colors">WhatsApp Us</h4>
-                     <p className="font-medium text-sm md:text-base">+94 77 712 3456</p>
+                     <p className="font-medium text-sm md:text-base">+94 76 907 0466</p>
                    </div>
                 </a>
               </div>
