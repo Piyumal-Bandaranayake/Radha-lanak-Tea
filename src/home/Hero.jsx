@@ -125,12 +125,7 @@ const Hero = () => {
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-2 md:p-3 shadow-xl border border-white/20"
                   >
-                       <Image 
-                          src="https://v5.airtableusercontent.com/v3/u/34/34/1739815200000/bKxMofv7iYv6w99O6PjSww/w80rVp9O8C0_34c56y5x_o_4H_X_w_w/34" 
-                          alt="Leaf" 
-                          fill
-                          className="object-contain p-2 opacity-80" 
-                       />
+                       
                   </motion.div>
                   
                   <motion.div 
