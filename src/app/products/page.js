@@ -89,9 +89,11 @@ export default function ProductsPage() {
                       {product.name}
                     </h4>
                     <div className="inline-block relative">
-                      <div className="text-primary/40 font-bold tracking-[0.2em] text-[10px] uppercase">Starts from</div>
+                      <div className="text-primary/40 font-bold tracking-[0.2em] text-[10px] uppercase">
+                        Starts from / {product.cardPriceLabel || "100g"}
+                      </div>
                       <div className="text-primary font-black text-xl tracking-tight">
-                        {product.prices["1kg"]}
+                        {product.cardPriceKey ? product.prices[product.cardPriceKey] : product.prices["100g"]}
                       </div>
                       {/* Decorative Line */}
                       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full"></div>
