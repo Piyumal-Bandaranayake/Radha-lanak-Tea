@@ -9,6 +9,7 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-secondary",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const dancingScript = Dancing_Script({
